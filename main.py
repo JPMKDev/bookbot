@@ -1,8 +1,13 @@
 from stats import *
+import sys
 
-target = "books/frankenstein.txt"
+
 
 def main():
+    if(len(sys.argv) != 2):
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    target = sys.argv[1]
     text = get_book_text(target)
     #print(text)
     #print(f"{count_words(text)} words found in the document")
